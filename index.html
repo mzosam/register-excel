@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="Style/Style.css">
+</head>
+
+<body>
+    <div class="container navbar mb-5">
+        <img src="Images/big_5_logo.png" alt="Red car">
+        <a href="https://www.bigfive.durban/" target="_blank"><button>Home</button></a>
+    </div>
+
+    <div class="container">
+        <div class="group">
+            <div class="banner">
+                <p>Meet <br> <span>best of durban</span> <br>Autobody repairer</p>
+                <img src="Images/IMG_3770.JPG">
+            </div>
+            <form id="form">
+                <h1>Visitors Register</h1>
+
+                <div class="form-floating mb-4">
+                    <input type="text" name="Name" placeholder="John"  id="name" class="form-control form-control-lg" required>
+                    <label>First Name</label>
+                </div>
+
+                <div class="form-floating mb-4">
+                    <input type="text" name="Surname" placeholder="Smith" class="form-control form-control-lg" required>
+                    <label>Last Name</label>
+                </div>
+
+                <div class="input-group mb-4">
+                    <div class="input-group-text">+27</div>
+                    <input type="text" name="Phone" class="form-control form-control-lg" required>
+                </div>
+
+                <div class="form-floating mb-4">
+                    <input type="text" name="Email" placeholder="Sam@bbigfive.durban" class="form-control form-control-lg" required>
+                    <label>Email</label>
+                </div>
+                
+                <div class="form-floating mb-4">
+                    <input type="datetime-local" name="Date"  class="form-control form-control-lg" required>
+                    <label>Date</label>
+                </div>
+                
+                <Select name="Reason" class="form-select form-select-lg mb-4" required>
+                    <option value="" selected></option>
+                    <option value="Visit">Visit</option>
+                    <option value="Quotation">Quotation</option>
+                    <option value="Constructot">Constractor</option>
+                    <option value="Assessor">Assessor</option>
+                    <option value="BooIn">Book in for repaires</option>
+                    <option value="Tow">Tow company</option>
+                    <option value="Meeting">Meeting</option>
+                    <option value="Enquiries">Enquiries</option>
+                    <option value="Delivery">Delivery</option>
+                    <option value="Appointment">Appointment</option>
+                    <option value="Interview">Interview</option>
+                    <option value="Other">Other</option>
+                </Select>
+                <button type="submit" class="btn btn-primary w-100 btn-lg">Submit</button>
+            </form>
+        </div>  
+    </div>
+
+    <script>
+        const scriptURL = "https://script.google.com/macros/s/AKfycbw_V6NE5qVp2haw4xSek9P-NvTQtvNSigefsGx3I2cZTsVCHuq_9RAtpXCkUnjV3DCu/exec";
+        const form = document.getElementById("form");
+
+        form.addEventListener("submit", e => {
+        e.preventDefault();
+
+        fetch(scriptURL, {
+            method: "POST",
+            body: new FormData(form)
+        })
+        .then(response => alert("Form submitted."))
+        .catch(error => alert("Error submitting form"));
+        document.getElementById("form").reset();
+        });
+    </script>
+</body>
+
+</html>
+

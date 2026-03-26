@@ -1,0 +1,25 @@
+@media (max-width: 480px) {
+    body{
+        padding: min(1em,3%) !important;
+    }
+    .navbar{
+        padding: 0 10px !important;
+    }
+    .container .group{
+        flex-direction: column;
+    }
+    .container:nth-child(2){
+        overflow: auto !important;
+        scrollbar-width: none !important;
+    }
+    .group .banner{
+        width: 100%;
+        position: relative;
+    }
+    .group .banner img{
+        width: 100%;
+    }
+    .container form{
+        width: 100%;
+    }
+}

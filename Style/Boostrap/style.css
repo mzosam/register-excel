@@ -1,0 +1,9 @@
+.box{
+    background-color: tomato;
+    height: 30px;
+    margin: 10px;
+}
+
+.col:nth-child(2) .box{
+    background-color:blueviolet;
+}
