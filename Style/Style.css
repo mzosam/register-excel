@@ -12,6 +12,7 @@ body{
     box-sizing: border-box;
     padding: 20px;
     overflow: auto;
+    height: 100dvh;
 }
 
 i{
